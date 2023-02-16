@@ -76,6 +76,7 @@
 
 .sidebar .nav-links li:hover {
     background: orange;
+    border-radius: 5px;
 }
 
 .sidebar .nav-links li .iocn-link {
@@ -121,6 +122,8 @@
 }
 
 .sidebar.close .nav-links li a .link_name {
+    margin-left: 10px;
+    margin-right: 10px;
     opacity: 0;
     pointer-events: none;
 }
@@ -136,6 +139,8 @@
 }
 
 .sidebar .nav-links li .sub-menu a {
+    margin-left: 15px;
+    margin-right: 15px;
     color: #fff;
     font-size: 15px;
     padding: 5px 0;
