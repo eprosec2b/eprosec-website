@@ -289,6 +289,16 @@
     font-weight: 600;
 }
 
+div.home-content {
+    position: absolute;
+}
+
+#imagem {
+    width: 100%;
+    max-width: 1920px;
+    height: 748px;
+}
+
 @media (max-width: 400px) {
     .sidebar.close .nav-links li .sub-menu {
         display: none;
