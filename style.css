@@ -13,7 +13,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 260px;
+    width: 360px;
     background: #11101d;
     z-index: 100;
     transition: all 0.5s ease;
@@ -125,7 +125,7 @@
 }
 
 .sidebar .nav-links li .sub-menu {
-    padding: 6px 6px 14px 80px;
+    padding: 6px 6px 14px 30px;
     margin-top: -10px;
     background: #1d1b31;
     display: none;
@@ -194,7 +194,7 @@
 .sidebar .profile-details {
     position: fixed;
     bottom: 0;
-    width: 260px;
+    width: 360px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -252,8 +252,8 @@
     position: relative;
     background: #E4E9F7;
     height: 100vh;
-    left: 260px;
-    width: calc(100% - 260px);
+    left: 360px;
+    width: calc(100% - 360px);
     transition: all 0.5s ease;
 }
 
