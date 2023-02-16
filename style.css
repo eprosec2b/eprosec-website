@@ -290,10 +290,12 @@
 }
 
 div.home-content {
-    position: absolute;
+    padding-top: 40px;
+    position: fixed;
 }
 
 #imagem {
+
     width: 100%;
     height: 100%;
 }
@@ -304,7 +306,7 @@ div.home-content {
     }
 
     .sidebar {
-        width: 78px;
+        width: 100%;
     }
 
     .sidebar.close {
@@ -312,9 +314,15 @@ div.home-content {
     }
 
     .home-section {
-        left: 78px;
-        width: calc(100% - 78px);
+        left: 312px;
+        width: calc(100% - 100%);
         z-index: 100;
+    }
+
+    .home-section .home-content .bx-menu,
+    .home-section .home-content .text {
+        color: rgb(50, 50, 50);
+        font-size: 35px;
     }
 
     .sidebar.close~.home-section {
