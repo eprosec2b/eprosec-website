@@ -89,7 +89,7 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Secretaria</a></li>
-                    <li><a href="#">Horários</a></li>
+                    <li><a href="horarios.html">Horários</a></li>
                     <li><a href="#">Ementa</a></li>
                     <li><a href="#">Documentos</a></li>
                 </ul>

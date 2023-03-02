@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+.nav {
+    text-align: center;
+}
+h1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 35px;
+    width: 25%;
+    margin: 0 auto;
+    background-color: gray;
+}
+.turmas, .turmas2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: gray;
+    width: 75%;
+    margin: 0 auto;
+    text-decoration: none;
+}
+.turmas a, .turmas2 a {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: darkgray;
+    text-decoration: none;
+    color: black;
+}
+.turmas a:hover, .turmas2 a:hover {
+    color: white;
+    background-color: black;
+}
