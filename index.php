@@ -133,7 +133,7 @@
                         <div class="profile_name">Adriano Arruda</div>
                         <div class="job">Administrador</div>
                     </div>
-                    <a href="logout.php"><i class='bx bx-log-out'></i></a>
+                    <a href="http://127.0.0.1:5500/logout.php"><i class='bx bx-log-out'></i></a>
                 </div>
             </li>
         </ul>
