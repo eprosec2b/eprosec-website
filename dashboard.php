@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
 <html lang="en" dir="ltr">
@@ -20,13 +22,12 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="#">
+            <div class="iocn-link">
+                    <a href="index.php">
                     <i class='bx bx-grid-alt'></i>
-                    <span class="link_name">Home</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Cursos</a></li>
-                </ul>
+                        <span class="link_name">Home</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <div class="iocn-link">
@@ -130,10 +131,19 @@
                         <!--<img src="image/profile.jpg" alt="profileImg">-->
                     </div>
                     <div class="name-job">
-                        <div class="profile_name">Adriano Arruda</div>
+                        <?php 
+
+                        if (isset($_SESSION['nome'])) {
+                            echo '<div class="profile_name">' . $_SESSION['nome'] . '</div>';
+                        } else {
+                            echo '<div class="profile_name"> Faça Login </div> ';
+                            echo '<div class="job"></div>';
+                        }
+                        ?>
+                        <div class="profile_name"><?php echo $_SESSION['nome']?> </div>
                         <div class="job">Administrador</div>
                     </div>
-                    <a href="login.php"><i class='bx bx-log-in'></i></a>
+                    <a href="logout.php"><i class='bx bx-log-out'></i></a>
                 </div>
             </li>
         </ul>
@@ -143,7 +153,6 @@
             <i class='bx bx-menu'></i>
         </div>
         <div class="centro">
-            <img id="imagem" src="EPROSEC (1).png" alt="">
         </div>
     </section>
     <script>
@@ -162,5 +171,4 @@
         });
     </script>
 </body>
-
 </html>
