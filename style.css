@@ -294,12 +294,6 @@ div.home-content {
     position: fixed;
 }
 
-#imagem {
-    width: 100%;
-    max-height: 960px;
-    object-fit: cover;
-    object-position: center;
-}
 
 @media (max-width: 400px) {
     .sidebar.close .nav-links li .sub-menu {

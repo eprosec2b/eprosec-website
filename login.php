@@ -4,18 +4,21 @@ session_start();
 $conn = mysqli_connect('localhost', 'administrador', 'System32', 'eprosec');
 
 if (isset($_POST['login'])) {
-    $username = $_POST['nome'];
+    $numero = $_POST['numero'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM utilizador WHERE nome='$username' AND password='$password'";
+    $query = "SELECT * FROM utilizador WHERE numero='$numero' AND password='$password'";
     $result = mysqli_query($conn, $query);
     $num_rows = mysqli_num_rows($result);
 
     if ($num_rows == 1) {
 
-        session_start();
+        $row = mysqli_fetch_assoc($result);
         $_SESSION['logged_in'] = true;
-        $_SESSION['nome'] = $username;
+        $_SESSION['numero'] = $numero;
+        $_SESSION['cargo'] = $row['cargo'];
+        $_SESSION['nome'] = $row['nome'];
+        $_SESSION['sobrenome'] = $row['sobrenome'];
 
         header("Location: dashboard.php");
     } else {
@@ -34,17 +37,22 @@ if (isset($_POST['login'])) {
     <title>Login | EPROSEC</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <div class="background">
+        <img id="teste" src="EPROSEC (1).png" alt="">
+    </div>
+<section class="formulario">
     <form action="" method="post">
         <div class="login">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" required>
+            <h1>Login</h1>
+            <label for="numero">Número</label>
+            <input type="text" name="numero" id="numero" required><br>
 
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password" required><br>
 
-            <button type="submit" name="login"> Login </button>
-        </div>
+            <button type="submit" id="button" name="login"> Login </button>
+            </div>
     </form>
+    </section>
 </body>
 </html>

@@ -1,12 +1,10 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
-<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="UTF-8">
-    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
     <link rel="stylesheet" href="style.css">
-    <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -124,16 +122,36 @@
                 </ul>
             </li>
             <li>
-                <div class="profile-details">
-                    <div class="profile-content">
-                        <i class='bx bxs-user'></i>
-                        <!--<img src="image/profile.jpg" alt="profileImg">-->
-                    </div>
-                    <div class="name-job">
-                        <div class="profile_name">Adriano Arruda</div>
-                        <div class="job">Administrador</div>
-                    </div>
-                    <a href="login.php"><i class='bx bx-log-in'></i></a>
+
+<div class="profile-details">
+    <div class="profile-content">
+        <?php echo isset($_SESSION['nome'], $_SESSION['sobrenome'], $_SESSION['cargo']) 
+                ? '<a href="dashboard.php"><i class="bx bxs-user"></i></a>' 
+                : '<a href="index.php"><i class="bx bxs-user"></i></a>'; ?>
+    </div>
+
+    <div class="name-job">
+        <div class="profile_name">
+            <?php if(isset($_SESSION['nome'], $_SESSION['sobrenome'])) {
+                $nome = htmlspecialchars($_SESSION['nome']);
+                $sobrenome = htmlspecialchars($_SESSION['sobrenome']);
+                    echo "$nome $sobrenome";
+                } else {
+                    echo 'Faça Login';
+                } ?>
+        </div>
+
+        <div class="job"><?php echo isset($_SESSION['cargo']) ? htmlspecialchars($_SESSION['cargo']) : ''; ?></div>
+    </div>
+
+    <?php if (isset($_SESSION['nome'], $_SESSION['sobrenome'], $_SESSION['cargo'])) { ?>
+        <a href="logout.php"><i class="bx bx-log-out"></i></a>
+    <?php } else { ?>
+        <a href="login.php"><i class="bx bx-log-in"></i></a>
+    <?php } ?>
+</div>
+
+
                 </div>
             </li>
         </ul>
@@ -142,9 +160,12 @@
         <div class="home-content">
             <i class='bx bx-menu'></i>
         </div>
-        <div class="centro">
-            <img id="imagem" src="EPROSEC (1).png" alt="">
+        <div class="centro" style="position: static; top: 0; left: 0; width: 100%; height: 100%;">
+            <img id="imagem" src="EPROSEC (1).png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
+
+    
+    
     </section>
     <script>
         let arrow = document.querySelectorAll(".arrow");
