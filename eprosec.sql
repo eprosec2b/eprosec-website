@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Mar-2023 às 11:39
+-- Tempo de geração: 04-Mar-2023 às 18:26
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -30,18 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `utilizador` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
+  `sobrenome` varchar(255) NOT NULL,
   `numero` int(11) NOT NULL,
   `ano` int(11) NOT NULL,
   `turma` varchar(1) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `cargo` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `utilizador`
 --
 
-INSERT INTO `utilizador` (`id`, `nome`, `numero`, `ano`, `turma`, `password`) VALUES
-(1, 'Adriano Furtado Arruda', 6553, 2, 'B', 'a064d43d02b4');
+INSERT INTO `utilizador` (`id`, `nome`, `sobrenome`, `numero`, `ano`, `turma`, `password`, `cargo`) VALUES
+(1, 'Adriano', 'Arruda', 6553, 2, 'B', 'teste321', 'Administrador'),
+(2, 'Matilde', 'Carreiro', 6554, 2, 'A', 'teste123', 'Contabilidade');
 
 --
 -- Índices para tabelas despejadas
@@ -61,7 +64,7 @@ ALTER TABLE `utilizador`
 -- AUTO_INCREMENT de tabela `utilizador`
 --
 ALTER TABLE `utilizador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
