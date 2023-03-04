@@ -140,7 +140,6 @@
                             echo '<div class="job"></div>';
                         }
                         ?>
-                        <div class="profile_name"><?php echo $_SESSION['nome']?> </div>
                         <div class="job">Administrador</div>
                     </div>
                     <a href="logout.php"><i class='bx bx-log-out'></i></a>
