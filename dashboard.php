@@ -1,4 +1,6 @@
 <?php session_start();
+
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -145,11 +147,7 @@ if (isset($_SESSION['nome'], $_SESSION['sobrenome'], $_SESSION['cargo'])) {
     echo '</div>';
     echo '<a href="login.php"><i class="bx bx-log-in"></i></a>';
 }
-
-$_SESSION['nome'] = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Guest';
-$_SESSION['cargo'] = isset($_SESSION['cargo']) ? $_SESSION['cargo'] : 'Unknown';
 ?>
-
                 </div>
             </li>
         </ul>
@@ -159,6 +157,7 @@ $_SESSION['cargo'] = isset($_SESSION['cargo']) ? $_SESSION['cargo'] : 'Unknown';
             <i class='bx bx-menu'></i>
         </div>
         <div class="centro">
+            
         </div>
     </section>
     <script>
@@ -178,3 +177,8 @@ $_SESSION['cargo'] = isset($_SESSION['cargo']) ? $_SESSION['cargo'] : 'Unknown';
     </script>
 </body>
 </html>
+<?php
+ } else {
+    header("Location: index .php");
+}
+?>
